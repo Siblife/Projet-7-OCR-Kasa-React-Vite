@@ -4,19 +4,20 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import NotFound from "../pages/NotFound";
 import Logement from "../pages/Logement";
-import Layout from "../components/Layout";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
-      <Layout>
+    <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/logement" element={<Logement />} />
         </Routes>
-      </Layout>
+        <Footer />
     </BrowserRouter>
   );
 }
