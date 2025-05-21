@@ -4,8 +4,8 @@ function Banner() {
   return (
     <div className="BannerImg">
       <img src="src\assets\banner_home.jpg" alt="" />
-      <p>Chez vous, 
-        partout et ailleurs</p>
+      <h1>Chez vous, 
+        partout et ailleurs</h1>
     </div>
   );
 }

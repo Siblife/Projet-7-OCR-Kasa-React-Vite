@@ -11,12 +11,18 @@
     background-blend-mode: darken;
   }
 
-  p{
+  h1 {
     font-family: 'Montserrat';
     font-size: 24px;
     color: white;
-    position: relative;
-    top: -110PX;
-    left: 30PX;
+    position: absolute;   // <-- change ici
+    top: 50%;             // <-- centré verticalement (ajuste selon besoin)
+    left: 50%;            // <-- centré horizontalement (ajuste selon besoin)
+    transform: translate(-50%, -50%); // <-- pour un centrage parfait
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0 20px;
+    z-index: 1;
   }
 }
