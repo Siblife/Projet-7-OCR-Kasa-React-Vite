@@ -1,9 +1,18 @@
 .cardLogement {
-    background: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  p {
+    font-family: "MontSerrat";
+    font-size: 18px;
+    color: white;
+  }
+
+  .cardImg {
     width: 100%;
     height: 255px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    object-fit: cover;
+  }
 }
