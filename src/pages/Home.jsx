@@ -1,13 +1,14 @@
 import Banner from '../components/Banner';
 import Card from '../components/Card';
 import logements from '../logements.json';
+import "../styles/Home.scss";
 
 function Home () {
 
   return (
     <>
     <Banner />
-    <div className="cards-container">
+    <div className="cardsContainer">
       {logements.map((logement) => (
         <Card
           key={logement.id}
