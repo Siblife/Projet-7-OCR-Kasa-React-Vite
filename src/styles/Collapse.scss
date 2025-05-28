@@ -1,0 +1,50 @@
+.collapse {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background: #f7f7f7;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0001;
+  transition: box-shadow 0.3s;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 16px;
+    background: #ff6060;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    height: 30px; 
+    line-height: 30px;
+    position: relative;
+    user-select: none;
+  }
+
+  .arrow {
+    transition: transform 0.3s;
+    margin-left: 10px;
+    font-size: 18px;
+    &.up {
+      transform: rotate(180deg);
+    }
+    &.down {
+      transform: rotate(0deg);
+    }
+  }
+
+  &_content {
+    max-height: 0;
+    overflow: hidden;
+    background: white;
+    color: #333;
+    padding: 0 16px;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.4s;
+  }
+
+  &.open .collapse_content {
+    max-height: 500px; 
+    padding: 16px;
+  }
+}
