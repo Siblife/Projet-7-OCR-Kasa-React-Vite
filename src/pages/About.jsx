@@ -1,9 +1,10 @@
 import BannerApropos from "../components/BannerApropos";
 import Collapse from "../components/Collapse";
+import '../styles/About.scss';
 
 function About() {
   return (
-    <div>
+    <div className="about_container">
       <BannerApropos />
       <Collapse title="Fiabilité">
         <p>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, 
