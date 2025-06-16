@@ -1,25 +1,63 @@
-import {useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import logements from "../logements.json";
-
+import Slideshow from "../components/Slideshow";
+import Collapse from "../components/Collapse";
+import "../styles/fontawesome.scss";
 
 function Logement() {
   const { id } = useParams();
   const logement = logements.find((item) => item.id === id);
 
-  if (!logement) return <div>Logement non trouvé</div>;
+  if (!logement) return <Navigate to="/404" replace />;
 
   return (
-    <div className="logement-page">
-      /* Slideshow */
-      /* Titre + localisation */
-      /* Tags */
-      /* Host + Rating */
-      <p>{logement.tags}</p>
-      <p>{logement.host.name}</p>
-      <img src={logement.host.picture} alt="" />
-      /* Description (Collapse) */
-      /* Équipements (Collapse) */
-      
+    <div className="logement_page">
+      <Slideshow pictures={logement.pictures} />
+      <div className="logement_top">
+        <div className="logement_infos">
+          <h1 className="logement_title">{logement.title}</h1>
+          <p className="logement_location">{logement.location}</p>
+          <div className="logement_tags">
+            {logement.tags.map((tag, idx) => (
+              <span className="logement_tag" key={idx}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="logement_host_block">
+        <div className="logement_rating">
+          {[1, 2, 3, 4, 5].map((n) => (
+            <i
+              key={n}
+              className={
+                "fa-solid fa-star star" +
+                (n <= Number(logement.rating) ? " filled" : "")
+              }
+              aria-hidden="true"
+            ></i>
+          ))}
+        </div>
+        <div className="logement_host">
+          <span className="host_name">{logement.host.name}</span>
+          <img
+            className="host_picture"
+            src={logement.host.picture}
+            alt={logement.host.name}
+          />
+        </div>
+      </div>
+      <div className="logement_collapses">
+        <Collapse title="Description">{logement.description}</Collapse>
+        <Collapse title="Équipements">
+          <ul>
+            {logement.equipments.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </Collapse>
+      </div>
     </div>
   );
 }
