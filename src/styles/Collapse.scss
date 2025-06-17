@@ -15,7 +15,7 @@
     color: white;
     font-weight: bold;
     font-size: 18px;
-    height: 30px; 
+    height: 52px;
     line-height: 30px;
     position: relative;
     user-select: none;
@@ -39,11 +39,21 @@
     background: white;
     color: #333;
     padding: 0 16px;
-    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.4s;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s;
   }
 
   &.open .collapse_content {
-    max-height: 500px; 
+    max-height: 500px;
     padding: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .collapse {
+    width: 1023px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
   }
 }
