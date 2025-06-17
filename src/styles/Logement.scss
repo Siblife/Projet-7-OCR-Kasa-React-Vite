@@ -118,3 +118,70 @@
   display: block;
   text-align: right;
 }
+
+@media (min-width: 1024px) {
+  .logement_top {
+    width: 100%;
+    max-width: 1240px;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .logement_infos_wrapper {
+    width: 100%;
+    max-width: 1240px;
+    margin: 32px auto 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .logement_col_left {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .logement_col_right {
+    flex: 0 0 260px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 18px;
+  }
+  .logement_rating {
+    margin-top: 18px;
+    align-self: flex-end;
+  }
+  .logement_collapses {
+    width: 100%;
+    max-width: 1240px;
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  .logement_collapses > * {
+    width: 48%;
+    margin-bottom: 0;
+  }
+
+  .logement_title {
+    font-size: 36px;
+  }
+
+  .logement_location {
+    font-size: 18px
+  }
+
+  .host_name {
+    font-size: 18px;
+  }
+}

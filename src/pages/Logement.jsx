@@ -25,36 +25,36 @@ function Logement() {
               </span>
             ))}
           </div>
-          <div className="logement_rating_host_row">
-            <div className="logement_rating logement_rating_right">
-              {[1, 2, 3, 4, 5].map((n) => (
-                <i
-                  key={n}
-                  className={
-                    "fa-solid fa-star star" +
-                    (n <= Number(logement.rating) ? " filled" : "")
-                  }
-                  aria-hidden="true"
-                ></i>
-              ))}
-            </div>
-            <div className="logement_host_block">
-              {(() => {
-                const [prenom, ...nom] = logement.host.name.split(" ");
-                return (
-                  <span className="host_name">
-                    <span>{prenom}</span>
-                    <br />
-                    <span>{nom.join(" ")}</span>
-                  </span>
-                );
-              })()}
-              <img
-                className="host_picture"
-                src={logement.host.picture}
-                alt={logement.host.name}
-              />
-            </div>
+        </div>
+        <div className="logement_col_right">
+          <div className="logement_host_block">
+            {(() => {
+              const [prenom, ...nom] = logement.host.name.split(" ");
+              return (
+                <span className="host_name">
+                  <span>{prenom}</span>
+                  <br />
+                  <span>{nom.join(" ")}</span>
+                </span>
+              );
+            })()}
+            <img
+              className="host_picture"
+              src={logement.host.picture}
+              alt={logement.host.name}
+            />
+          </div>
+          <div className="logement_rating logement_rating_right">
+            {[1, 2, 3, 4, 5].map((n) => (
+              <i
+                key={n}
+                className={
+                  "fa-solid fa-star star" +
+                  (n <= Number(logement.rating) ? " filled" : "")
+                }
+                aria-hidden="true"
+              ></i>
+            ))}
           </div>
         </div>
       </div>

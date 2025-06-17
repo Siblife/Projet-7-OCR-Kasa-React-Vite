@@ -1,5 +1,9 @@
 .slideshow_container {
   position: relative;
+  width: 100%;
+  max-width: 1240px;
+  margin: 40px auto 0 auto;
+  box-sizing: border-box;
 }
 
 .slideshow_image {
@@ -61,3 +65,18 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+@media (max-width: 1240px) {
+  .slideshow_container {
+    width: 100%;
+    max-width: 100%;
+    margin: 24px 0 0 0;
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slideshow_image {
+    height: 415px;
+    border-radius: 25px;
+  }
+}
