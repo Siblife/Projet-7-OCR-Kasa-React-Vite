@@ -3,6 +3,7 @@ import logements from "../logements.json";
 import Slideshow from "../components/Slideshow";
 import Collapse from "../components/Collapse";
 import "../styles/fontawesome.scss";
+import "../styles/Logement.scss";
 
 function Logement() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function Logement() {
     <div className="logement_page">
       <Slideshow pictures={logement.pictures} />
       <div className="logement_top">
-        <div className="logement_infos">
+        <div className="logement_col_left">
           <h1 className="logement_title">{logement.title}</h1>
           <p className="logement_location">{logement.location}</p>
           <div className="logement_tags">
@@ -24,28 +25,37 @@ function Logement() {
               </span>
             ))}
           </div>
-        </div>
-      </div>
-      <div className="logement_host_block">
-        <div className="logement_rating">
-          {[1, 2, 3, 4, 5].map((n) => (
-            <i
-              key={n}
-              className={
-                "fa-solid fa-star star" +
-                (n <= Number(logement.rating) ? " filled" : "")
-              }
-              aria-hidden="true"
-            ></i>
-          ))}
-        </div>
-        <div className="logement_host">
-          <span className="host_name">{logement.host.name}</span>
-          <img
-            className="host_picture"
-            src={logement.host.picture}
-            alt={logement.host.name}
-          />
+          <div className="logement_rating_host_row">
+            <div className="logement_rating logement_rating_right">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <i
+                  key={n}
+                  className={
+                    "fa-solid fa-star star" +
+                    (n <= Number(logement.rating) ? " filled" : "")
+                  }
+                  aria-hidden="true"
+                ></i>
+              ))}
+            </div>
+            <div className="logement_host_block">
+              {(() => {
+                const [prenom, ...nom] = logement.host.name.split(" ");
+                return (
+                  <span className="host_name">
+                    <span>{prenom}</span>
+                    <br />
+                    <span>{nom.join(" ")}</span>
+                  </span>
+                );
+              })()}
+              <img
+                className="host_picture"
+                src={logement.host.picture}
+                alt={logement.host.name}
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="logement_collapses">

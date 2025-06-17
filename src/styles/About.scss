@@ -1,5 +1,12 @@
 .about_container {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about_container > .collapse:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.about_container > .BannerImg {
+  margin-bottom: 32px;
 }

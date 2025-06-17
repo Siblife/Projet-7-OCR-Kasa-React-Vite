@@ -8,11 +8,9 @@ function Collapse({ title, children }) {
     <div className={`collapse ${open ? "open" : ""}`}>
       <div className="collapse_header" onClick={() => setOpen(!open)}>
         <span>{title}</span>
-        <span className={`arrow ${open ? "up" : "down"}`}>▼</span>
+        <i className={`fa-solid fa-chevron-${open ? "up" : "down"} arrow`}></i>
       </div>
-      <div className="collapse_content">
-        {children}
-      </div>
+      <div className="collapse_content">{children}</div>
     </div>
   );
 }
