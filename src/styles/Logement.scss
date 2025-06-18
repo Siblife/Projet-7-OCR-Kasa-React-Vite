@@ -37,6 +37,7 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 6px;
+  margin: 0;
 }
 
 .logement_location {
@@ -141,11 +142,9 @@
     gap: 40px;
   }
   .logement_col_left {
-    flex: 1 1 0;
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
   }
   .logement_col_right {
     flex: 0 0 260px;
@@ -153,7 +152,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 18px;
+    gap: 65px;
   }
   .logement_rating {
     margin-top: 18px;
@@ -183,5 +182,10 @@
 
   .host_name {
     font-size: 18px;
+  }
+
+  .host_picture {
+    width: 64px;
+    height: 64px;
   }
 }
