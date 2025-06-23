@@ -38,6 +38,12 @@ function Slideshow({ pictures = [] }) {
           <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
         </button>
       )}
+      {/* Indicateur du slide courant, visible uniquement en desktop */}
+      {total > 1 && (
+        <div className="slideshow_indicator">
+          {current + 1} / {total}
+        </div>
+      )}
     </div>
   );
 }
